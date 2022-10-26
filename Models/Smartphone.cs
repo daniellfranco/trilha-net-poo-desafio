@@ -5,7 +5,9 @@ namespace DesafioPOO.Models
     public abstract class Smartphone
     {
         public string Numero { get; set; }
-        private string Modelo { get; set; }
+
+        //alterado para protected para poder fazer uma listagem de modelo com polimorfismo
+        protected string Modelo { get; set; }
         private string IMEI { get; set; }
         private int Memoria { get; set; }
 
@@ -32,9 +34,12 @@ namespace DesafioPOO.Models
 
         public abstract void InstalarAplicativo(string nomeApp);
 
+        //metodos de ideias adicionais abaixo
+        public abstract void DesinstalarAplicativo(string nomeApp);
+
         public virtual void ListarApps()
         {
-            if(AppsInstalados.Count == 0)
+            if (AppsInstalados.Count == 0)
             {
                 Console.WriteLine("Não há aplicativos instalados, que tal instalar algum?");
             }
@@ -48,12 +53,11 @@ namespace DesafioPOO.Models
 
         }
 
-        //ideia adicional
-        //metodo para listar dados do smartphone
-        public void ListarInformacoes()
+        //metodo para listar dados privados do smartphone
+        public virtual void ListarInformacoes()
         {
-            Console.WriteLine($"Numero de telefone: {Numero}");
             //Console.WriteLine($" {Modelo}"); //implementar com polimorfismo
+            Console.WriteLine($"Numero de telefone: {Numero}");
             Console.WriteLine($"IMEI: {IMEI}");
             Console.WriteLine($"Memoria: {Memoria}GB");
         }

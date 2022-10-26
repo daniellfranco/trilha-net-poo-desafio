@@ -21,10 +21,32 @@ namespace DesafioPOO.Models
 
         }
 
+        public override void DesinstalarAplicativo(string nomeApp)
+        {
+
+            if (AppsInstalados.Contains(nomeApp))
+            {
+                Console.WriteLine($"Desinstalando o app {nomeApp} do seu Nokia.");
+                AppsInstalados.Remove(nomeApp);
+            }
+            else
+            {
+                Console.WriteLine($"O Aplicativo {nomeApp} não encontrado no seu Nokia");
+            }
+
+        }
+
         public override void ListarApps()
         {
             Console.WriteLine("Os seguintes aplicativos estão instalados no seu Nokia:");
             base.ListarApps();
+        }
+
+        public override void ListarInformacoes()
+        {
+            Console.WriteLine("Informações do Nokia:");
+            Console.WriteLine($"Modelo: Nokia {Modelo}");
+            base.ListarInformacoes();
         }
     }
 }

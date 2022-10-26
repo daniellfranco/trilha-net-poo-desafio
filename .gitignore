@@ -3,7 +3,7 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
-## Meu
+## Adicionado pois não estava removendo essa pasta do vscode
 .vscode/
 
 # User-specific files
